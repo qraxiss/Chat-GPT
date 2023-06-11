@@ -1,15 +1,18 @@
+from datetime import datetime
+from api import OpenAi
+from time import sleep
+import threading
 from flet import *
-import os
-import asyncio
-import openai
 from dotenv import load_dotenv
 load_dotenv()
 
-api_key = os.getenv("API_KEY")
-openai.api_key = api_key
 bg = '#444654'
 fg = '#202123'
 side_bar_width = 260
+
+
+openai = OpenAi(str(datetime.now()))
+print(openai.chat)
 
 
 class Main(UserControl):
@@ -619,19 +622,10 @@ class Main(UserControl):
                 "content": text
             }
         )
-        print(self.prompt)
-        completion = openai.ChatCompletion.create(
-            model='gpt-3.5-turbo',
-            messages=self.prompt
-        )
-        chat_response = completion.choices[0].message.content
-        self.prompt.append(
-            {
-                'role': 'assistant',
-                'content': chat_response
-            }
-        )
-        return chat_response
+        openai.addMessage(text)
+        chat_response = openai.getAiResponse()
+        self.prompt.append(chat_response)
+        return chat_response["content"]
 
     def blink(self,):
         while True:
