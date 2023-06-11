@@ -43,7 +43,10 @@ class Main(UserControl):
             )
         )
         self.cursor = Container(
-            width=8, height=20, bgcolor='white', )
+            width=8, height=20,
+            # bgcolor='#3e3f4b',
+        )
+
         self.message_field = TextField(
             border=InputBorder.NONE,
             expand=True,
@@ -136,7 +139,7 @@ class Main(UserControl):
         self.main_content = Container(
             padding=padding.only(top=20,),
             expand=True,
-            bgcolor=bg,
+            # bgcolor=bg,
             content=Column(
                 alignment='spaceBetween',
                 horizontal_alignment='center',
@@ -160,7 +163,7 @@ class Main(UserControl):
                                     elevation=5,
                                     content=Container(
                                         border_radius=10,
-                                        bgcolor='#40414f',
+                                        # bgcolor='#40414f',
                                         padding=padding.only(
                                             top=5, right=4, left=10, bottom=5),
                                         height=50,
@@ -188,7 +191,7 @@ class Main(UserControl):
                                     controls=[
                                         Text(
                                             expand=True,
-                                            value='This is running on free plan. Created by @1mrnewton on YouTube',
+                                            value='Bu app, kapsül teknoloji platformu için demo olarak geliştirilmiştir.',
                                             text_align='center'
                                         )
                                     ]
@@ -208,11 +211,11 @@ class Main(UserControl):
         self.page.add(
             Container(
                 expand=True,
-                bgcolor=bg,
+                # bgcolor=bg,
                 content=Row(
                     spacing=0,
                     controls=[
-                        self.side_bar,
+                        # self.side_bar,
                         self.main_content,
                     ]
                 )
@@ -222,23 +225,24 @@ class Main(UserControl):
 
     def new_chat_hover(self, e: HoverEvent):
         if e.data == 'true':
-            e.control.bgcolor = '#2b2c2f'
+
+            e.control.bgcolor = '#e0e0e0'
         else:
             e.control.bgcolor = None
         e.control.update()
 
     def hover(self, e):
         if e.data == 'true':
-            e.control.bgcolor = '#2a2b32'
+            e.control.bgcolor = '#c0c0c0'
         else:
             e.control.bgcolor = None
         e.control.update()
 
     def hover2(self, e):
         if e.data == 'true':
-            e.control.bgcolor = '#2a2b32'
+            e.control.bgcolor = '#c0c0c0'
         else:
-            e.control.bgcolor = '#3e3f4b'
+            e.control.bgcolor = '#e0e0e0'
         e.control.update()
 
     def send_clicked(self, e: TapEvent):
@@ -272,9 +276,11 @@ class Main(UserControl):
 
                 self.content_area.controls.append(
                     Container(
-                        bgcolor='#343541',
+
+                        # light shadow
+                        bgcolor='#FAF7F9',
                         padding=padding.only(
-                                top=20, bottom=60, left=20, right=20
+                            top=20, bottom=60, left=20, right=20
                         ),
                         content=Row(
                             controls=[
