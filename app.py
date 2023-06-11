@@ -18,8 +18,9 @@ print(openai.chat)
 class Main(UserControl):
     def __init__(self, page: Page,):
         page.padding = 0
-        page.title = 'ChatGPT'
-        page.theme = Theme(color_scheme_seed="green")
+        page.title = 'KapsülGPT'
+        # COLOR THEME BLUE & DARK BLUE & WHITE
+        # page.theme = Theme(color_scheme_seed="black")
         page.update()
         self.blinking = False
         self.chat_response = ''
@@ -38,7 +39,7 @@ class Main(UserControl):
             padding=padding.only(top=120),
             alignment=alignment.center,
             content=Text(
-                value='ChatGPT',
+                value='KapsülGPT',
                 size=35, weight=FontWeight.BOLD,
             )
         )
@@ -89,9 +90,9 @@ class Main(UserControl):
                                         top=20, bottom=30, left=20, right=20),
                                     border_radius=8,
                                     on_hover=self.hover2,
-                                    bgcolor='#3e3f4b',
+                                    # bgcolor='#3e3f4b',
                                     content=Text(
-                                        'May occationally generate incorrect information',
+                                        'Kapsül Ne Zaman Kuruldu?',
                                         text_align='center',
                                     )
                                 ),
@@ -104,9 +105,9 @@ class Main(UserControl):
                                         top=20, bottom=30, left=20, right=20),
                                     border_radius=8,
                                     on_hover=self.hover2,
-                                    bgcolor='#3e3f4b',
+                                    # bgcolor='#3e3f4b',
                                     content=Text(
-                                        'May occasionally produce harmful instruction or biased content',
+                                        'Gönüllü başvurularını nereden yapabilirim?',
                                         text_align='center',
                                     )
                                 ),
@@ -119,15 +120,15 @@ class Main(UserControl):
                                         top=20, bottom=30, left=20, right=20),
                                     border_radius=8,
                                     on_hover=self.hover2,
-                                    bgcolor='#3e3f4b',
+                                    # bgcolor='#3e3f4b',
                                     content=Text(
-                                        'Limited knowledge of world and events after 2021',
+                                        'Kapsül Teknoloji Platformunun misyonu nedir?',
                                         text_align='center',
                                     )
                                 ),
 
                             ]
-                        ),
+                        )
                     ]
                 )
 
